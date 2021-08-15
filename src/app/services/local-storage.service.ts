@@ -1,5 +1,11 @@
 import {Injectable} from '@angular/core';
 
+/**
+ * @description Local Storage Service for storing session data
+ * @module services/local-storage.service
+ * @version 1.0.0
+ * @namespace LocalStorageService
+ */
 @Injectable()
 export class StorageService {
 

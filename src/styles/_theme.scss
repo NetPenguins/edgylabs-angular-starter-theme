@@ -1,5 +1,6 @@
 @import "colors";
 
+//TODO: Add theme colors
 .theme-light {
   background-color: whitesmoke;
   @each $name, $color in $colors {

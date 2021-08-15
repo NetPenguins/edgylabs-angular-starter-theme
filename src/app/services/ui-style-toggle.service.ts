@@ -7,6 +7,10 @@ export enum ThemeMode {
   DEFAULT, DARK, LIGHT
 }
 
+/**
+ * @author Chad Wilson
+ * @description UI style/theme toggle service
+ **/
 @Injectable()
 export class UiStyleToggleService {
 

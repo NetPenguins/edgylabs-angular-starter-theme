@@ -1,11 +1,11 @@
 <div class="toolbar" role="banner">
   <img
     alt="Edgy Stack Dark Mode Template"
-    src="../assets/logo.png"
-    width="60"
+    src="../assets/eslabs.png"
+    width="150"
   />
-  <span>Dark Mode Template</span>
   <div class="spacer"></div>
+ <!-- TODO: Add custom toggle here or move this around. -->
   <a class="dark-mode" title="Dark theme" (click)="toggleTheme()">
     <div *ngIf="darkmode; then dark else light"></div>
     <ng-template #light>
@@ -602,9 +602,11 @@
 
   <!-- Footer -->
   <footer>
-    Love Angular?&nbsp;
-    <a href="https://github.com/angular/angular" rel="noopener" target="_blank">
-      Give our repo a star.
+    Created by&nbsp;
+    <a href="https://blog.edgystack.com" rel="noopener" target="_blank">
+      EdgyStack
+    </a>
+    <a href="https://github.com/NetPenguins/edgylabs-angular-starter-theme" rel="noopener" target="_blank">
       <div class="github-star-badge">
         <svg
           class="material-icons"
@@ -620,8 +622,6 @@
         </svg>
         Star
       </div>
-    </a>
-    <a href="https://github.com/angular/angular" rel="noopener" target="_blank">
       <svg
         class="material-icons"
         height="24"
