@@ -10,6 +10,7 @@ export enum ThemeMode {
 /**
  * @author Chad Wilson
  * @description UI style/theme toggle service
+ * @module services/ui-style-toggle.service
  **/
 @Injectable()
 export class UiStyleToggleService {
