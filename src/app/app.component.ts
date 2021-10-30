@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {UiStyleToggleService} from "./services/ui-style-toggle.service";
 
 @Component({
@@ -6,10 +6,17 @@ import {UiStyleToggleService} from "./services/ui-style-toggle.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'EdgyStack Dark Mode Template';
+  
   darkmode: boolean = this.uiStyleToggleService.isDarkThemeSelected();
   constructor(private uiStyleToggleService: UiStyleToggleService) {
+  }
+  ngOnInit(): void {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      // dark mode is enabled
+      this.darkmode = true;
+    }
   }
 
   toggleTheme() {
