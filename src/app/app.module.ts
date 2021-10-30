@@ -4,6 +4,8 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {UiStyleToggleService} from "./services/ui-style-toggle.service";
 import {StorageService} from "./services/local-storage.service";
+import { FooterComponent } from './components/footer/footer.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 export function themeFactory(themeService: UiStyleToggleService) {
   return () => themeService.setThemeOnStart();
@@ -11,7 +13,9 @@ export function themeFactory(themeService: UiStyleToggleService) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FooterComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
