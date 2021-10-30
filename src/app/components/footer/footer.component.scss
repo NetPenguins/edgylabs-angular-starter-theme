@@ -1,3 +1,12 @@
+:host{
+  height: 40px;
+  display: flex;
+  width: 100%;
+  margin-top: auto;
+  justify-content: center;
+}
+//Stick footer to bottom
+
 footer {
     margin-top: 8px;
     display: flex;
@@ -9,7 +18,7 @@ footer {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: rgba(0, 119, 255, 0.616)
+    color: rgba(0, 102, 255, 0.616)
   }
 
   .github-star-badge {
