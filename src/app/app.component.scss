@@ -1,6 +1,7 @@
 :root{
   html {
     background: var(--background-color);
+    min-height: 100%;
   }
 }
 :host {
@@ -26,42 +27,14 @@
 
   .spacer {
     flex: 1;
-  }
-
-  .toolbar {
-    height: 60px;
-    margin: -8px;
-    display: flex;
-    align-items: center;
-    background: var(--toolbar-color);
-    color: var(--toolbar-text-color);
-    font-weight: 600;
-
-    img {
-      margin: 0 16px;
-    }
-
-    #dark-mode {
-      height: 40px;
-      margin: 0 16px;
-
-      & {
-        :hover {
-          opacity: 0.8;
-        }
-      }
-    }
-    .dark-mode{
-      align-items: flex-end;
-      padding-right: 2rem;
-    }
-  }
+  } 
 
   .content {
     display: flex;
     margin: 32px auto;
     padding: 0 16px;
     max-width: 960px;
+    min-height: 100%;
     flex-direction: column;
     align-items: center;
     background: var(--background-color);
@@ -154,7 +127,6 @@
     right: 180px;
     z-index: -10;
   }
-
   a,
   a:visited,
   a:hover {
@@ -217,44 +189,6 @@
   .circle-link:hover {
     transform: translateY(-0.25rem);
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-  }
-
-  footer {
-    margin-top: 8px;
-    display: flex;
-    align-items: center;
-    line-height: 20px;
-  }
-
-  footer a {
-    display: flex;
-    align-items: center;
-  }
-
-  .github-star-badge {
-    color: #24292e;
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    padding: 3px 10px;
-    border: 1px solid rgba(27, 31, 35, .2);
-    border-radius: 3px;
-    background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
-    margin-left: 4px;
-    font-weight: 600;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-  }
-
-  .github-star-badge:hover {
-    background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
-    border-color: rgba(27, 31, 35, .35);
-    background-position: -.5em;
-  }
-
-  .github-star-badge .material-icons {
-    height: 16px;
-    width: 16px;
-    margin-right: 4px;
   }
 
   svg#clouds {
