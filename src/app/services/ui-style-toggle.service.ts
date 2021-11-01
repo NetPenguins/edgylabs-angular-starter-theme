@@ -29,18 +29,22 @@ export class UiStyleToggleService {
     we will use prefers-color-scheme to determine which theme to default to.
   */
   public setThemeOnStart() {
-    if (this.isDarkThemeSelected()) {
-      this.setDarkTheme();
-    } else if (this.isLightThemeSelected()) {
-      this.setLightTheme();
-    }
-    if(window.matchMedia && this.isDefaultThemeSelected()) {
+    //TODO: Set additional session key to determine if the user has already set a theme
+    if(window.matchMedia) {
+      console.log("matchMedia supported");
       window.matchMedia('(prefers-color-scheme: dark)').matches 
         ? this.setDarkTheme()
         : this.setLightTheme();
     }
     else if(!window.matchMedia){
+      console.log("matchMedia not supported");
       this.setDarkTheme();
+    } else if (this.isDarkThemeSelected()) {
+      console.log("dark theme selected");
+      this.setDarkTheme();
+    } else if (this.isLightThemeSelected()) {
+      console.log("light theme selected");
+      this.setLightTheme();
     }
     setTimeout(() => {
       document.body.classList.add('animate-colors-transition');

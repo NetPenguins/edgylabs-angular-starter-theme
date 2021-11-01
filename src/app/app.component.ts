@@ -13,10 +13,7 @@ export class AppComponent implements OnInit {
   constructor(private uiStyleToggleService: UiStyleToggleService) {
   }
   ngOnInit(): void {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      // dark mode is enabled
-      this.darkmode = true;
-    }
+    this.uiStyleToggleService.setThemeOnStart();
   }
 
   toggleTheme() {
