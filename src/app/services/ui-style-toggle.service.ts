@@ -29,22 +29,23 @@ export class UiStyleToggleService {
     we will use prefers-color-scheme to determine which theme to default to.
   */
   public setThemeOnStart() {
-    //TODO: Set additional session key to determine if the user has already set a theme
-    if(window.matchMedia) {
-      console.log("matchMedia supported");
+    if(this.isThemeSet()) {
+      if(this.isDarkThemeSelected()) {
+        this.setDarkTheme();
+      } else {
+        this.setLightTheme();
+      }
+    }
+    // If the browser supports matchMedia and the user hasnt specified a theme
+    else if(window.matchMedia) {
+      console.log("matchMedia supported set to dark");
       window.matchMedia('(prefers-color-scheme: dark)').matches 
         ? this.setDarkTheme()
         : this.setLightTheme();
-    }
-    else if(!window.matchMedia){
-      console.log("matchMedia not supported");
+    } 
+    // Default to dark theme if the browser doesnt support matchMedia
+    else if(!window.matchMedia || !this.isThemeSet()) {
       this.setDarkTheme();
-    } else if (this.isDarkThemeSelected()) {
-      console.log("dark theme selected");
-      this.setDarkTheme();
-    } else if (this.isLightThemeSelected()) {
-      console.log("light theme selected");
-      this.setLightTheme();
     }
     setTimeout(() => {
       document.body.classList.add('animate-colors-transition');
@@ -68,6 +69,9 @@ export class UiStyleToggleService {
   }
   public isDefaultThemeSelected(): boolean {
     return this.storage.get(this.THEME_KEY) === "DEFAULT";
+  }
+  public isThemeSet(): boolean {
+    return this.storage.get(this.THEME_KEY) === "DARK" || this.storage.get(this.THEME_KEY) === "LIGHT";
   }
 
   private setLightTheme() {
