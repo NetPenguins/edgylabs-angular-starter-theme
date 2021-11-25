@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CookieService } from 'ngx-cookie';
 import {UiStyleToggleService} from "./services/ui-style-toggle.service";
 
 @Component({
@@ -9,18 +8,10 @@ import {UiStyleToggleService} from "./services/ui-style-toggle.service";
 })
 export class AppComponent implements OnInit {
   title = 'EdgyStack Dark Mode Template';
+
+  constructor( private uiStyleToggleService: UiStyleToggleService ) { }
   
-  darkmode: boolean = this.uiStyleToggleService.isDarkThemeSelected();
-  constructor(
-    private uiStyleToggleService: UiStyleToggleService,
-    private cookieService: CookieService,
-  ) {}
   ngOnInit(): void {
     this.uiStyleToggleService.setThemeOnStart();
-  }
-
-  toggleTheme() {
-    //this.uiStyleToggleService.toggle();
-    this.darkmode = this.uiStyleToggleService.isDarkThemeSelected();
   }
 }
