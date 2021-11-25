@@ -10,8 +10,9 @@ export class NavbarComponent implements OnInit {
 
   title = 'EdgyStack Dark Mode Template';
   darkmode: boolean = this.uiStyleToggleService.isDarkThemeSelected();
-  constructor(private uiStyleToggleService: UiStyleToggleService) {
-  }
+
+  constructor(private uiStyleToggleService: UiStyleToggleService) {}
+
   ngOnInit(): void {
   }
 
@@ -19,5 +20,4 @@ export class NavbarComponent implements OnInit {
     this.uiStyleToggleService.toggle();
     this.darkmode = this.uiStyleToggleService.isDarkThemeSelected();
   }
-
 }

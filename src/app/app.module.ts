@@ -6,6 +6,7 @@ import {UiStyleToggleService} from "./services/ui-style-toggle.service";
 import {StorageService} from "./services/local-storage.service";
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { CookieModule } from 'ngx-cookie';
 
 export function themeFactory(themeService: UiStyleToggleService) {
   return () => themeService.setThemeOnStart();
@@ -19,7 +20,8 @@ export function themeFactory(themeService: UiStyleToggleService) {
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CookieModule.forRoot(),
   ],
   providers: [
     UiStyleToggleService,
